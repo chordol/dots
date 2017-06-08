@@ -5,7 +5,11 @@ set nobackup
 set noswapfile
 
 set mouse=a
-set ttymouse=xterm2
+if has("mouse_sgr")
+    set ttymouse=sgr
+else
+    set ttymouse=xterm2
+end
 set nu
 set clipboard=unnamed
 let mapleader=" "
@@ -88,11 +92,9 @@ set infercase
 
 set foldmethod=syntax
 
-set t_Co=256
 syntax on
-let g:solarized_termtrans = 1                                                   
-let g:solarized_termcolors=256                                                  
 set background=dark
+let g:solarized_termtrans = 1
 colorscheme solarized
 
 " Neat for Javascript

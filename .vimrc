@@ -39,7 +39,7 @@ Plug 'https://github.com/editorconfig/editorconfig-vim'
 Plug 'https://github.com/airblade/vim-rooter'
 Plug 'https://github.com/godlygeek/tabular'
 Plug 'https://github.com/flazz/vim-colorschemes'
-Plug 'https://github.com/vim-/vim-airline'
+Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 call plug#end()
@@ -48,6 +48,7 @@ call plug#end()
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_section_z=''
+let g:airline_theme='base16_solarized'
 
 let g:rooter_patterns = ['.git/']
 " http://stackoverflow.com/questions/19297627/set-vim-current-working-directory-to-the-current-project-root-or-to-the-director
@@ -93,6 +94,7 @@ set infercase
 set foldmethod=syntax
 
 syntax on
+set t_Co=256
 set background=dark
 let g:solarized_termtrans = 1
 colorscheme solarized

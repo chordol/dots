@@ -11,7 +11,13 @@ else
     set ttymouse=xterm2
 end
 set nu
-set clipboard=unnamed
+
+" Fix Vim + Tmux yank/paste on unnamed register
+" https://stackoverflow.com/questions/11404800/fix-vim-tmux-yank-paste-on-unnamed-register
+if $TMUX == ''
+    set clipboard+=unnamed
+endif
+
 let mapleader=" "
 
 set laststatus=2

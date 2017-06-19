@@ -21,6 +21,7 @@ endif
 let mapleader=" "
 
 set laststatus=2
+set foldmethod=syntax
 set foldenable
 set foldlevel=99
 
@@ -96,8 +97,6 @@ set softtabstop=4
 set scrolloff=5
 set ignorecase
 set infercase
-
-set foldmethod=syntax
 
 syntax on
 set t_Co=256

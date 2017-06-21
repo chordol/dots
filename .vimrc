@@ -14,9 +14,10 @@ set nu
 
 " Fix Vim + Tmux yank/paste on unnamed register
 " https://stackoverflow.com/questions/11404800/fix-vim-tmux-yank-paste-on-unnamed-register
-if $TMUX == ''
-    set clipboard+=unnamed
-endif
+" if $TMUX == ''
+"     set clipboard+=unnamed
+" endif
+set clipboard=unnamed
 
 let mapleader=" "
 

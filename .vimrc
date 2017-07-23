@@ -22,8 +22,8 @@ set clipboard=unnamed
 let mapleader=" "
 
 set laststatus=2
-set foldmethod=syntax
 set foldenable
+set foldmethod=syntax
 set foldlevel=99
 
 call plug#begin('~/.vim/plugged')
@@ -50,6 +50,7 @@ Plug 'https://github.com/flazz/vim-colorschemes'
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
+Plug 'https://github.com/ternjs/tern_for_vim.git'
 call plug#end()
 
 " Remove arrows from airline.

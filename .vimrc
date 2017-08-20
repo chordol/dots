@@ -123,8 +123,6 @@ autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:las
 
 noremap  <buffer> <silent> k gk
 noremap  <buffer> <silent> j gj
-noremap  <buffer> <silent> 0 g0
-noremap  <buffer> <silent> $ g$
 
 " Make FZF respect .gitignore
 " https://github.com/junegunn/fzf.vim/issues/121

@@ -34,7 +34,6 @@ Plug 'https://github.com/tpope/vim-commentary'
 Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/tpope/vim-surround'
 Plug 'https://github.com/tpope/vim-abolish'
-Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/pangloss/vim-javascript'
 Plug 'https://github.com/mxw/vim-jsx'
 " Snipmate

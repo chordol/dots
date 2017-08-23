@@ -72,8 +72,6 @@ autocmd BufWinEnter *.* silent loadview
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 au BufRead,BufNewFile *.kontext setfiletype html
 
-onoremap <silent> j gj
-onoremap <silent> k gk
 " vim-fzf shortcuts
 nnoremap <leader>ff :Files<CR>
 nnoremap <leader>bb :Buffer<CR>

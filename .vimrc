@@ -1,31 +1,5 @@
 set nocompatible      " We're running Vim, not Vi!
 
-set hidden
-set nobackup
-set noswapfile
-
-set mouse=a
-if has("mouse_sgr")
-    set ttymouse=sgr
-else
-    set ttymouse=xterm2
-end
-set nu
-
-" Fix Vim + Tmux yank/paste on unnamed register
-" https://stackoverflow.com/questions/11404800/fix-vim-tmux-yank-paste-on-unnamed-register
-" if $TMUX == ''
-"     set clipboard+=unnamed
-" endif
-set clipboard=unnamed
-
-let mapleader=" "
-
-set laststatus=2
-set foldmethod=syntax
-set foldlevel=99
-set foldenable
-
 call plug#begin('~/.vim/plugged')
 Plug 'https://github.com/mattn/emmet-vim'
 Plug 'https://github.com/junegunn/fzf.vim'
@@ -72,6 +46,32 @@ autocmd BufWinEnter *.* silent loadview
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 au BufRead,BufNewFile *.kontext setfiletype html
 
+set hidden
+set nobackup
+set noswapfile
+
+set mouse=a
+if has("mouse_sgr")
+    set ttymouse=sgr
+else
+    set ttymouse=xterm2
+end
+set nu
+
+" Fix Vim + Tmux yank/paste on unnamed register
+" https://stackoverflow.com/questions/11404800/fix-vim-tmux-yank-paste-on-unnamed-register
+" if $TMUX == ''
+"     set clipboard+=unnamed
+" endif
+set clipboard=unnamed
+
+let mapleader=" "
+
+set laststatus=2
+set foldmethod=syntax
+set foldlevel=99
+set foldenable
+
 " vim-fzf shortcuts
 nnoremap <leader>ff :Files<CR>
 nnoremap <leader>bb :Buffer<CR>
@@ -87,16 +87,18 @@ set hlsearch
 set incsearch
 set nowrap
 
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
 set expandtab
+set shiftwidth=4
+set tabstop=4
 
-set scrolloff=5
+set ai
+set si
+
+" set scrolloff=5
 set ignorecase
 set infercase
 
-syntax on
+syntax enable
 set t_Co=256
 set background=dark
 let g:solarized_termtrans = 1

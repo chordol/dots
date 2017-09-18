@@ -31,6 +31,8 @@ let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_section_z=''
 let g:airline_theme='base16_solarized'
+let g:airline#extensions#branch#enabled = 0
+let g:airline#extensions#hunks#enabled = 0
 
 let g:rooter_patterns = ['.git/']
 " http://stackoverflow.com/questions/19297627/set-vim-current-working-directory-to-the-current-project-root-or-to-the-director
@@ -103,6 +105,9 @@ set t_Co=256
 set background=dark
 let g:solarized_termtrans = 1
 colorscheme Monokai
+
+" strip trailing whitespace on write
+autocmd BufWritePre * %s/\s\+$//e
 
 " Neat for Javascript
 " Console log from insert mode; Puts focus inside parentheses

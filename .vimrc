@@ -65,7 +65,7 @@ set nu
 " if $TMUX == ''
 "     set clipboard+=unnamed
 " endif
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 let mapleader=" "
 
@@ -115,7 +115,7 @@ imap cll console.log();<Esc>==f(a
 " Console log from visual mode on next line, puts visual selection inside parentheses
 vmap cll yocll<Esc>p
 " Console log from normal mode, inserted on next line with word your on inside parentheses
-nmap cll yiwocll<Esc>p 
+nmap cll yiwocll<Esc>p
 
 " http://vim.wikia.com/wiki/Keep_folds_closed_while_inserting_text
 " Don't screw up folds when inserting text that might affect them, until

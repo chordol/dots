@@ -3,6 +3,7 @@ set nocompatible      " We're running Vim, not Vi!
 call plug#begin('~/.vim/plugged')
 Plug 'https://github.com/mattn/emmet-vim'
 Plug 'https://github.com/junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'https://github.com/tpope/vim-surround.git'
 Plug 'https://github.com/tpope/vim-commentary'
 Plug 'https://github.com/tpope/vim-fugitive'

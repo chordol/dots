@@ -24,6 +24,7 @@ Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'https://github.com/ternjs/tern_for_vim.git'
+Plug 'posva/vim-vue'
 call plug#end()
 
 " Remove arrows from airline.
@@ -46,7 +47,6 @@ autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-au BufRead,BufNewFile *.kontext setfiletype html
 
 set hidden
 set nobackup
@@ -115,7 +115,7 @@ imap cll console.log();<Esc>==f(a
 " Console log from visual mode on next line, puts visual selection inside parentheses
 vmap cll yocll<Esc>p
 " Console log from normal mode, inserted on next line with word your on inside parentheses
-nmap cll yiwocll<Esc>p 
+nmap cll yiwocll<Esc>p
 
 " http://vim.wikia.com/wiki/Keep_folds_closed_while_inserting_text
 " Don't screw up folds when inserting text that might affect them, until

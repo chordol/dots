@@ -2,7 +2,7 @@ set nocompatible      " We're running Vim, not Vi!
 
 call plug#begin('~/.vim/plugged')
 Plug 'https://github.com/mattn/emmet-vim'
-Plug 'https://github.com/junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'
 Plug 'https://github.com/tpope/vim-surround.git'
 Plug 'https://github.com/tpope/vim-commentary'
 Plug 'https://github.com/tpope/vim-fugitive'
@@ -23,7 +23,7 @@ Plug 'https://github.com/flazz/vim-colorschemes'
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
-Plug 'https://github.com/ternjs/tern_for_vim.git'
+" Plug 'https://github.com/ternjs/tern_for_vim.git'
 Plug 'posva/vim-vue'
 call plug#end()
 

@@ -48,7 +48,8 @@ autocmd BufWinEnter *.* silent loadview
 
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
-set autoread
+set wildignorecase " case-insensitive filename completion
+set autoread " automatically load changed files
 set ttyfast
 set hidden
 set nobackup

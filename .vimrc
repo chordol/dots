@@ -4,7 +4,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'https://github.com/mattn/emmet-vim'
 Plug 'junegunn/fzf.vim'
 Plug 'https://github.com/tpope/vim-surround.git'
-Plug 'https://github.com/tpope/vim-commentary'
+" Plug 'https://github.com/tpope/vim-commentary'
 Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/tpope/vim-surround'
 Plug 'https://github.com/tpope/vim-abolish'
@@ -23,6 +23,7 @@ Plug 'https://github.com/flazz/vim-colorschemes'
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
+Plug 'https://github.com/tomtom/tcomment_vim'
 " Plug 'https://github.com/ternjs/tern_for_vim.git'
 Plug 'posva/vim-vue'
 call plug#end()
@@ -47,6 +48,10 @@ autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+" vue
+autocmd FileType vue syntax sync fromstart
+autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 
 set wildignorecase " case-insensitive filename completion
 set autoread " automatically load changed files

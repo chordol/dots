@@ -81,6 +81,7 @@ set laststatus=2
 " set foldmethod=syntax
 " set foldlevel=99
 " set foldenable
+autocmd Syntax js setlocal foldmethod=syntax
 
 " vim-fzf shortcuts
 nnoremap <leader>ff :Files<CR>
@@ -129,8 +130,8 @@ nmap cll yiwocll<Esc>p
 " Don't screw up folds when inserting text that might affect them, until
 " leaving insert mode. Foldmethod is local to the window. Protect against
 " screwing up folding when switching between windows.
-autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
-autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
+" autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
+" autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
 
 noremap  <buffer> <silent> k gk
 noremap  <buffer> <silent> j gj

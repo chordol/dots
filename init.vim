@@ -50,6 +50,10 @@ let g:EditorConfig_exec_path = '/usr/local/bin/editorconfig'
 " let g:deoplete#enable_at_startup = 1
 " let g:EditorConfig_core_mode = 'external_command'
 
+" airline config
+let g:airline#extensions#branch#enabled = 0
+let g:airline#extensions#hunks#enabled = 0
+
 "enable mouse
 set mouse=a
 

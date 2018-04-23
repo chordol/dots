@@ -29,6 +29,7 @@ Plug 'posva/vim-vue'
 " Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
 call plug#end()
 
+let mapleader=" "
 set pastetoggle=<f5>
 
 set nu

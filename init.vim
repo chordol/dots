@@ -29,6 +29,13 @@ Plug 'posva/vim-vue'
 " Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
 call plug#end()
 
+set wildignorecase " case-insensitive filename completion
+set autoread " automatically load changed files
+set ttyfast
+set hidden
+set nobackup
+set noswapfile
+
 let mapleader=" "
 set pastetoggle=<f5>
 

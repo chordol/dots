@@ -67,7 +67,7 @@ set expandtab
 set clipboard=unnamed
 
 " strip trailing whitespace on write
-autocmd BufWritePre * %s/\s\+$//e
+" autocmd BufWritePre * %s/\s\+$//e
 
 set termguicolors
 colorscheme Monokai

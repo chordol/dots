@@ -35,6 +35,7 @@ set ttyfast
 set hidden
 set nobackup
 set noswapfile
+set nowrap
 
 let mapleader=" "
 set pastetoggle=<f5>

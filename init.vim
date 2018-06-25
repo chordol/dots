@@ -23,11 +23,12 @@ Plug 'https://github.com/vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'https://github.com/tomtom/tcomment_vim'
 Plug 'posva/vim-vue'
-" Plug 'leafgarland/typescript-vim'
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
-" Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
+Plug 'Shougo/deoplete.nvim'
+Plug 'https://github.com/HerringtonDarkholme/yats.vim'
 call plug#end()
+
+let g:deoplete#enable_at_startup = 1
 
 set wildignorecase " case-insensitive filename completion
 set autoread " automatically load changed files

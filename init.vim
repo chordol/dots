@@ -74,16 +74,16 @@ set clipboard=unnamed
 set termguicolors
 colorscheme Monokai
 
-" FOLDING
-autocmd Syntax js,vue setlocal foldmethod=syntax
-" autocmd Syntax js,vue normal zR
-
 " FILETYPE
 " vue
 " autocmd FileType vue syntax sync fromstart
 autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css.scss
 " typescript
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
+"
+" FOLDING
+autocmd Syntax javascript,vue setlocal foldmethod=syntax
+" autocmd Syntax js,vue normal zR
 
 
 " Neat for Javascript

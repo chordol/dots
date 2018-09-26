@@ -26,9 +26,15 @@ Plug 'posva/vim-vue'
 Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
 Plug 'Shougo/deoplete.nvim'
 Plug 'https://github.com/HerringtonDarkholme/yats.vim'
+Plug 'grvcoelho/vim-javascript-snippets'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 call plug#end()
 
 let g:deoplete#enable_at_startup = 1
+
+" run prettier before save
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue Prettier
 
 set wildignorecase " case-insensitive filename completion
 set autoread " automatically load changed files

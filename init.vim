@@ -32,10 +32,6 @@ call plug#end()
 
 let g:deoplete#enable_at_startup = 1
 
-" run prettier before save
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue Prettier
-
 set wildignorecase " case-insensitive filename completion
 set autoread " automatically load changed files
 set ttyfast

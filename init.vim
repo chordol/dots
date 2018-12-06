@@ -31,6 +31,9 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 call plug#end()
 
 let g:deoplete#enable_at_startup = 1
+let g:prettier#config#single_quote = 'true'
+
+set foldlevel=20
 
 set wildignorecase " case-insensitive filename completion
 set autoread " automatically load changed files

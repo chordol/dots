@@ -81,7 +81,7 @@ colorscheme Monokai
 
 " FILETYPE
 " vue
-" autocmd FileType vue syntax sync fromstart
+autocmd FileType vue syntax sync fromstart
 autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css.scss
 " typescript
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript

@@ -54,7 +54,6 @@ set smartcase
 
 " https://zerokspot.com/weblog/2016/07/10/editorconfig-in-neovim/
 let g:EditorConfig_exec_path = '/usr/local/bin/editorconfig'
-" let g:deoplete#enable_at_startup = 1
 " let g:EditorConfig_core_mode = 'external_command'
 
 " airline config
@@ -122,20 +121,9 @@ if exists('+colorcolumn')
   augroup END
 endif
 
-" https://stackoverflow.com/questions/36363878/open-file-in-vertical-split-in-vim-netrw
+" https://superuser.com/questions/1056929/open-file-in-vertical-split-in-vim-netrw/1062063#1062063
 " open file vertically to the right
-augroup netrw_mappings
-    autocmd!
-    autocmd filetype netrw call Netrw_mappings()
-augroup END
-function! OpenToRight()
-  :rightbelow vnew
-  :wincmd p
-  :normal P
-endfunction
-function! Netrw_mappings()
-    noremap V :call OpenToRight()<cr>
-endfunction
+let g:netrw_altv=1
 
 " Neat for Javascript
 " Console log from insert mode; Puts focus inside parentheses

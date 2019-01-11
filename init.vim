@@ -154,3 +154,5 @@ nnoremap <leader>bb :Buffer<CR>
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 set rtp+=/usr/local/opt/fzf
+
+let g:python3_host_prog = '/Users/sasha/.pyenv/versions/neovim3/bin/python'

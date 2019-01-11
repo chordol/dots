@@ -122,6 +122,21 @@ if exists('+colorcolumn')
   augroup END
 endif
 
+" https://stackoverflow.com/questions/36363878/open-file-in-vertical-split-in-vim-netrw
+" open file vertically to the right
+augroup netrw_mappings
+    autocmd!
+    autocmd filetype netrw call Netrw_mappings()
+augroup END
+function! OpenToRight()
+  :rightbelow vnew
+  :wincmd p
+  :normal P
+endfunction
+function! Netrw_mappings()
+    noremap V :call OpenToRight()<cr>
+endfunction
+
 " Neat for Javascript
 " Console log from insert mode; Puts focus inside parentheses
 " imap cll console.log();<Esc>==f(a

@@ -24,10 +24,11 @@ Plug 'airblade/vim-gitgutter'
 Plug 'https://github.com/tomtom/tcomment_vim'
 Plug 'posva/vim-vue'
 Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
-Plug 'Shougo/deoplete.nvim'
+" Plug 'Shougo/deoplete.nvim'
 Plug 'https://github.com/HerringtonDarkholme/yats.vim'
 Plug 'grvcoelho/vim-javascript-snippets'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'https://github.com/digitaltoad/vim-pug.git'
 call plug#end()
 
 let g:deoplete#enable_at_startup = 1
@@ -47,7 +48,6 @@ let mapleader=" "
 set pastetoggle=<f5>
 
 set nu
-filetype indent on    " Enable filetype-specific indenting
 
 set ignorecase
 set smartcase
@@ -143,4 +143,4 @@ let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 set rtp+=/usr/local/opt/fzf
 
-let g:python3_host_prog = '/Users/sasha/.pyenv/versions/neovim3/bin/python'
+" let g:python3_host_prog = '/Users/sasha/.pyenv/versions/neovim3/bin/python'

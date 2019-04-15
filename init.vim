@@ -86,7 +86,7 @@ autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css.scss
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
 "
 " FOLDING
-autocmd Syntax javascript,vue setlocal foldmethod=syntax
+autocmd Syntax javascript,vue,typescript,pug setlocal foldmethod=syntax
 " autocmd Syntax js,vue normal zR
 
 " Dim inactive windows using 'colorcolumn' setting

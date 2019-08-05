@@ -23,11 +23,12 @@ Plug 'https://github.com/vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'https://github.com/tomtom/tcomment_vim'
 Plug 'posva/vim-vue'
-Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
+Plug 'mhartington/nvim-typescript', {'for': ['typescript', 'tsx'], 'do': './install.sh' }
 Plug 'Shougo/deoplete.nvim'
 Plug 'https://github.com/HerringtonDarkholme/yats.vim'
 Plug 'grvcoelho/vim-javascript-snippets'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'https://github.com/digitaltoad/vim-pug.git'
 call plug#end()
 
 let g:deoplete#enable_at_startup = 1
@@ -86,7 +87,7 @@ autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css.scss
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
 "
 " FOLDING
-autocmd Syntax javascript,vue setlocal foldmethod=syntax
+autocmd Syntax javascript,vue,typescript setlocal foldmethod=syntax
 " autocmd Syntax js,vue normal zR
 
 " Dim inactive windows using 'colorcolumn' setting
@@ -143,4 +144,7 @@ let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 set rtp+=/usr/local/opt/fzf
 
-let g:python3_host_prog = '/Users/sasha/.pyenv/versions/neovim3/bin/python'
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
+
+set backupcopy=yes

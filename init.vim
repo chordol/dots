@@ -23,7 +23,8 @@ Plug 'https://github.com/vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'https://github.com/tomtom/tcomment_vim'
 Plug 'posva/vim-vue'
-Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
+Plug 'leafgarland/typescript-vim', { 'do': './install.sh' }
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'Shougo/deoplete.nvim'
 Plug 'https://github.com/HerringtonDarkholme/yats.vim'
 Plug 'grvcoelho/vim-javascript-snippets'

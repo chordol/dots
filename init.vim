@@ -30,6 +30,7 @@ Plug 'https://github.com/HerringtonDarkholme/yats.vim'
 Plug 'grvcoelho/vim-javascript-snippets'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'https://github.com/digitaltoad/vim-pug.git'
+Plug 'https://github.com/chrisbra/csv.vim'
 call plug#end()
 
 let g:deoplete#enable_at_startup = 1

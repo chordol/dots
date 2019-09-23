@@ -23,7 +23,7 @@ Plug 'https://github.com/vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'https://github.com/tomtom/tcomment_vim'
 Plug 'posva/vim-vue'
-Plug 'leafgarland/typescript-vim', { 'do': './install.sh' }
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'Shougo/deoplete.nvim'
 Plug 'https://github.com/HerringtonDarkholme/yats.vim'
@@ -87,6 +87,7 @@ autocmd FileType vue syntax sync fromstart
 autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css.scss
 " typescript
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
+autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript
 " csv
 autocmd BufNewFile,BufRead *.csv setlocal noexpandtab
 

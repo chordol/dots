@@ -26,5 +26,7 @@ rm .config/nvim/init.vim
 git clone https://github.com/chordol/dots
 ln -s dots/.tmux.conf .tmux.conf
 ln -s dots/init.vim .config/nvim/init.vim
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim # install vim-plug https://github.com/junegunn/vim-plug
 nvim -c PlugInstall # install neovim plugins
 ```

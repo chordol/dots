@@ -9,7 +9,7 @@
 .tmux is assuming you are running zsh. If you're on OS X, I highly recommend it.
 ```
 # just run this script from the internet :) to install oh-my-zsh https://github.com/robbyrussell/oh-my-zsh
-$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 
 brew install reattach-to-user-namespace # fix for copying on OS X
 ```
 

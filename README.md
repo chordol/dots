@@ -4,9 +4,6 @@
 
 ## Setup
 
-Clone repo in your user folder, remove existing vim and tmux config files and create aliases.
-
-
 ### For tmux
 
 .tmux is assuming you are running zsh. If you're on OS X, I highly recommend it.

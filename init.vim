@@ -24,9 +24,10 @@ Plug 'airblade/vim-gitgutter'
 Plug 'https://github.com/tomtom/tcomment_vim'
 Plug 'posva/vim-vue'
 " https://github.com/mhartington/nvim-typescript/issues/121#issuecomment-389184743
-Plug 'mhartington/nvim-typescript', {'do': './install.sh', 'build': 'cd rplugin/node/nvim_typescript && npm install --production'}
+" Plug 'mhartington/nvim-typescript', {'do': './install.sh', 'build': 'cd rplugin/node/nvim_typescript && npm install --production'}
 Plug 'maxmellon/vim-jsx-pretty'
-Plug 'Shougo/deoplete.nvim'
+" Plug 'Shougo/deoplete.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'https://github.com/HerringtonDarkholme/yats.vim'
 Plug 'grvcoelho/vim-javascript-snippets'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
@@ -92,6 +93,9 @@ autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript
 " csv
 autocmd BufNewFile,BufRead *.csv setlocal noexpandtab
 
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
+
 " FOLDING
 autocmd Syntax javascript,vue,typescript,pug setlocal foldmethod=syntax
 " autocmd Syntax js,vue normal zR
@@ -111,6 +115,12 @@ let g:netrw_altv=1
 " vim-fzf shortcuts
 nnoremap <leader>ff :Files<CR>
 nnoremap <leader>bb :Buffer<CR>
+
+augroup after_plugin_coc_vim
+    au!
+    " set term title to current file
+    autocmd BufReadPost * if !filereadable("tags") | nmap <buffer> <silent> <C-]> :<C-u>call CocAction('jumpDefinition') <bar> exec('norm! zz')<CR> | endif
+augroup END
 
 " Make FZF respect .gitignore
 " https://github.com/junegunn/fzf.vim/issues/121

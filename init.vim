@@ -23,19 +23,14 @@ Plug 'https://github.com/vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'https://github.com/tomtom/tcomment_vim'
 Plug 'posva/vim-vue'
-" https://github.com/mhartington/nvim-typescript/issues/121#issuecomment-389184743
-" Plug 'mhartington/nvim-typescript', {'do': './install.sh', 'build': 'cd rplugin/node/nvim_typescript && npm install --production'}
 Plug 'maxmellon/vim-jsx-pretty'
-" Plug 'Shougo/deoplete.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'https://github.com/HerringtonDarkholme/yats.vim'
 Plug 'grvcoelho/vim-javascript-snippets'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'https://github.com/digitaltoad/vim-pug.git'
-Plug 'https://github.com/chrisbra/csv.vim'
 call plug#end()
 
-let g:deoplete#enable_at_startup = 1
 let g:prettier#config#single_quote = 'true'
 
 

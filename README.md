@@ -1,6 +1,6 @@
 # dots
 
-.init.vim and .tmux.conf files used with OS X 11.14.6, NVIM v0.4.2 and tmux 2.8
+.init.vim and .tmux.conf files used with OS X 11.15.3, NVIM v0.4.3 and tmux 3.0a
 
 ## Setup
 

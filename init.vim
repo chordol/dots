@@ -29,7 +29,9 @@ Plug 'https://github.com/HerringtonDarkholme/yats.vim'
 Plug 'grvcoelho/vim-javascript-snippets'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'https://github.com/digitaltoad/vim-pug.git'
+" Plug 'https://github.com/davidhalter/jedi-vim'
 call plug#end()
+
 
 let g:prettier#config#single_quote = 'true'
 
@@ -111,6 +113,9 @@ let g:netrw_altv=1
 " vim-fzf shortcuts
 nnoremap <leader>ff :Files<CR>
 nnoremap <leader>bb :Buffer<CR>
+" save
+noremap <leader>s :update<CR>
+
 
 augroup after_plugin_coc_vim
     au!
@@ -124,7 +129,18 @@ let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 set rtp+=/usr/local/opt/fzf
 
-let g:python_host_prog = '/Users/sasha/.pyenv/shims/python'
-let g:python3_host_prog = '/Users/sasha/.pyenv/shims/python3'
+let g:python_host_prog = '/Users/sdzeletovic/.pyenv/shims/python'
+let g:python3_host_prog = '/Users/sdzeletovic/.pyenv/shims/python3'
+
+function! MyFoldText()
+    let nblines = v:foldend - v:foldstart + 1
+    let w = winwidth(0) - &foldcolumn - (&number ? 8 : 0)
+    let line = getline(v:foldstart)
+    let comment = substitute(line, '/\*\|\*/\|{{{\d\=', '', 'g')
+    let expansionString = repeat(".", w - strwidth(nblines.comment.'"'))
+    let txt = comment . expansionString . nblines
+    return txt
+endfunction
+set foldtext=MyFoldText()
 
 set backupcopy=yes

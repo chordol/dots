@@ -4,10 +4,13 @@
 
 ## Setup
 
-### For tmux
+### For tmux & zsh
 
-.tmux is assuming you are running zsh. If you're on OS X, I highly recommend it.
-Follow instruction from [here](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH).
+.tmux is assuming you are running zsh. If you're on OS X, I highly recommend it.  
+
+For zsh, follow instruction from [here](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH).  
+
+For tmux, follow instructions from [here](https://linuxize.com/post/getting-started-with-tmux/).
 
 ### For NVIM
 

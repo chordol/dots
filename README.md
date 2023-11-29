@@ -13,6 +13,11 @@ For zsh, follow instruction from [here](https://github.com/ohmyzsh/ohmyzsh/wiki/
 brew install zsh
 ```
 
+Install oh-my-zsh ([link](https://ohmyz.sh/#install))
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
 For tmux, follow instructions from [here](https://linuxize.com/post/getting-started-with-tmux/), or just run:
 ```
 brew install tmux

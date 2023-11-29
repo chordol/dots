@@ -29,6 +29,7 @@ Plug 'https://github.com/HerringtonDarkholme/yats.vim'
 Plug 'grvcoelho/vim-javascript-snippets'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'https://github.com/digitaltoad/vim-pug.git'
+Plug 'tanvirtin/monokai.nvim'
 " Plug 'https://github.com/davidhalter/jedi-vim'
 call plug#end()
 

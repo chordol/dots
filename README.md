@@ -18,7 +18,7 @@ For tmux, follow instructions from [here](https://linuxize.com/post/getting-star
 brew install tmux
 ```
 
-### Install NeoVIM with fixings (fzf, silver searcher, vim plug, pyenv), and apply init.vim from this repo
+### Install NeoVIM, fzf, silver searcher, pyenv
 
 ```
 brew install fzf # install FZF https://github.com/junegunn/fzf
@@ -31,8 +31,18 @@ rm .tmux.conf # remove current .tmux.conf
 rm .config/nvim/init.vim # remove current .config/nvim/init.vim
 brew install neovim
 git clone https://github.com/chordol/dots
-ln -s dots/.tmux.conf .tmux.conf
-ln -s dots/init.vim .config/nvim/init.vim
+```
+### Symlink dot files
+
+Type in your user name.
+```
+ln -s /Users/[user name]/dots/.tmux.conf /Users/[user name]/.tmux.conf
+ln -s /Users/[user name]/dots/init.vim /Users/[user name]/.config/nvim/init.vim
+```
+
+### Install vim-plug and install all the plugins
+
+```
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 nvim -c PlugInstall # install neovim plugins

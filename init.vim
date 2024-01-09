@@ -9,9 +9,9 @@ Plug 'https://github.com/tpope/vim-abolish'
 Plug 'https://github.com/pangloss/vim-javascript'
 Plug 'https://github.com/mxw/vim-jsx'
 " Snipmate
-Plug 'https://github.com/tomtom/tlib_vim.git'
-Plug 'https://github.com/MarcWeber/vim-addon-mw-utils.git'
-Plug 'https://github.com/garbas/vim-snipmate.git'
+" Plug 'https://github.com/tomtom/tlib_vim.git'
+" Plug 'https://github.com/MarcWeber/vim-addon-mw-utils.git'
+" Plug 'https://github.com/garbas/vim-snipmate.git'
 " End Snipmate
 Plug 'https://github.com/honza/vim-snippets.git'
 Plug 'editorconfig/editorconfig-vim'

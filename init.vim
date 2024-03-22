@@ -1,5 +1,7 @@
+" note: brew install ripgrep
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'https://github.com/mattn/emmet-vim'
+Plug 'junegunn/fzf', {'do': { -> fzf#install() }}
 Plug 'junegunn/fzf.vim'
 Plug 'https://github.com/tpope/vim-surround.git'
 " Plug 'https://github.com/tpope/vim-commentary'
@@ -30,7 +32,9 @@ Plug 'grvcoelho/vim-javascript-snippets'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'https://github.com/digitaltoad/vim-pug.git'
 Plug 'tanvirtin/monokai.nvim'
-" Plug 'https://github.com/davidhalter/jedi-vim'
+Plug 'https://github.com/github/copilot.vim'
+" There is a CoC module for Copilot for VIM. If copilot is still clashing with CoC, you can try this plugin.
+" Plug 'https://github.com/hexh250786313/coc-copilot'
 call plug#end()
 
 
@@ -136,6 +140,9 @@ augroup after_plugin_coc_vim
           \ coc#refresh()
 augroup END
 
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+
 " Make FZF respect .gitignore
 " https://github.com/junegunn/fzf.vim/issues/121
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
@@ -157,3 +164,13 @@ endfunction
 set foldtext=MyFoldText()
 
 set backupcopy=yes
+
+" Using ripgrep with FZF
+command! -nargs=* R call FzfRg(<q-args>)
+
+function! FzfRg(query)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case %s || true'
+  let rg_command = printf(command_fmt, shellescape(a:query))
+  echo rg_command
+  call fzf#vim#grep(rg_command, 1, fzf#vim#with_preview(), 0)
+endfunction

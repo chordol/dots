@@ -32,6 +32,7 @@ Plug 'grvcoelho/vim-javascript-snippets'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'https://github.com/digitaltoad/vim-pug.git'
 Plug 'tanvirtin/monokai.nvim'
+Plug 'https://github.com/morhetz/gruvbox'
 Plug 'https://github.com/github/copilot.vim'
 " There is a CoC module for Copilot for VIM. If copilot is still clashing with CoC, you can try this plugin.
 " Plug 'https://github.com/hexh250786313/coc-copilot'
@@ -84,7 +85,8 @@ set clipboard=unnamed
 " autocmd BufWritePre * %s/\s\+$//e
 
 set termguicolors
-colorscheme Monokai
+" set background=light
+colorscheme gruvbox
 
 " FILETYPE
 " vue

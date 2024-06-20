@@ -149,7 +149,7 @@ nmap <silent> gd <Plug>(coc-definition)
 " https://github.com/junegunn/fzf.vim/issues/121
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
-set rtp+=/usr/local/opt/fzf
+set rtp+=/opt/homebrew/opt/fzf
 
 let g:python_host_prog = '/Users/sdzeletovic/.pyenv/shims/python'
 let g:python3_host_prog = '/Users/sdzeletovic/.pyenv/shims/python3'

@@ -169,3 +169,5 @@ command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   'rg --column --line-number --no-heading --color=always --smart-case --hidden --glob "!.git/*" --glob "!node_modules/*" --fixed-strings '.shellescape(<q-args>), 1,
   \   fzf#vim#with_preview(), <bang>0)
+
+let g:rooter_patterns = ['.git']

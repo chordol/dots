@@ -3,17 +3,12 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'https://github.com/mattn/emmet-vim'
 Plug 'junegunn/fzf', {'do': { -> fzf#install() }}
 Plug 'junegunn/fzf.vim'
-" Plug 'https://github.com/tpope/vim-commentary'
+Plug 'https://github.com/tpope/vim-commentary'
 Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/tpope/vim-surround'
 Plug 'https://github.com/tpope/vim-abolish'
 Plug 'https://github.com/pangloss/vim-javascript'
 Plug 'https://github.com/mxw/vim-jsx'
-" Snipmate
-" Plug 'https://github.com/tomtom/tlib_vim.git'
-" Plug 'https://github.com/MarcWeber/vim-addon-mw-utils.git'
-" Plug 'https://github.com/garbas/vim-snipmate.git'
-" End Snipmate
 Plug 'https://github.com/honza/vim-snippets.git'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'https://github.com/airblade/vim-rooter'
@@ -33,8 +28,7 @@ Plug 'https://github.com/digitaltoad/vim-pug.git'
 Plug 'tanvirtin/monokai.nvim'
 Plug 'https://github.com/morhetz/gruvbox'
 Plug 'https://github.com/github/copilot.vim'
-" There is a CoC module for Copilot for VIM. If copilot is still clashing with CoC, you can try this plugin.
-" Plug 'https://github.com/hexh250786313/coc-copilot'
+Plug 'https://github.com/airblade/vim-rooter'
 call plug#end()
 
 
@@ -144,10 +138,6 @@ augroup END
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 
-" Make FZF respect .gitignore
-" https://github.com/junegunn/fzf.vim/issues/121
-let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore node_modules --ignore .git -g ""'
-
 set rtp+=/opt/homebrew/opt/fzf
 
 let g:python_host_prog = '/Users/sdzeletovic/.pyenv/shims/python'
@@ -169,9 +159,13 @@ set backupcopy=yes
 " Using ripgrep with FZF
 command! -nargs=* R call FzfRg(<q-args>)
 
-function! FzfRg(query)
-  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case %s || true'
-  let rg_command = printf(command_fmt, shellescape(a:query))
-  echo rg_command
-  call fzf#vim#grep(rg_command, 1, fzf#vim#with_preview(), 0)
-endfunction
+" Ensure FZF uses ripgrep and ignores node_modules
+if executable('rg')
+  let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --glob "!.git/*" --glob "!node_modules/*"'
+endif
+
+" Use rg in fzf.vim and ignore node_modules
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case --hidden --glob "!.git/*" --glob "!node_modules/*" --fixed-strings '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)

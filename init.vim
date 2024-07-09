@@ -3,7 +3,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'https://github.com/mattn/emmet-vim'
 Plug 'junegunn/fzf', {'do': { -> fzf#install() }}
 Plug 'junegunn/fzf.vim'
-Plug 'https://github.com/tpope/vim-surround.git'
 " Plug 'https://github.com/tpope/vim-commentary'
 Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/tpope/vim-surround'
@@ -147,7 +146,7 @@ nmap <silent> gd <Plug>(coc-definition)
 
 " Make FZF respect .gitignore
 " https://github.com/junegunn/fzf.vim/issues/121
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore node_modules --ignore .git -g ""'
 
 set rtp+=/opt/homebrew/opt/fzf
 

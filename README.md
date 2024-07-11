@@ -23,12 +23,12 @@ For tmux, follow instructions from [here](https://linuxize.com/post/getting-star
 brew install tmux
 ```
 
-### Install NeoVIM, fzf, silver searcher, pyenv
+### Install NeoVIM, fzf, ripgrep, pyenv
 
 ```
 brew install fzf # install FZF https://github.com/junegunn/fzf
 $(brew --prefix)/opt/fzf/install # install useful key bindings and fuzzy completion
-brew install the_silver_searcher # install silver searcher https://github.com/ggreer/the_silver_searcher
+brew install ripgrep 
 brew install pyenv # install pyenv https://github.com/pyenv/pyenv
 cd ~
 mkdir -p .config/nvim

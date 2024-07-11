@@ -95,7 +95,7 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 
 " FOLDING
-autocmd Syntax javascript,vue,typescript,pug setlocal foldmethod=syntax
+autocmd Syntax javascript,jsx,vue,typescript,pug setlocal foldmethod=syntax
 " autocmd Syntax js,vue normal zR
 
 " https://superuser.com/questions/1056929/open-file-in-vertical-split-in-vim-netrw/1062063#1062063

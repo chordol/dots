@@ -161,13 +161,13 @@ command! -nargs=* R call FzfRg(<q-args>)
 
 " Ensure FZF uses ripgrep and ignores node_modules
 if executable('rg')
-  let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --glob "!.git/*" --glob "!node_modules/*"'
+  let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --glob "!.git/*" --glob "!node_modules/*"  --glob "!bundle*"'
 endif
 
 " Use rg in fzf.vim and ignore node_modules
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --smart-case --hidden --glob "!.git/*" --glob "!node_modules/*" --fixed-strings '.shellescape(<q-args>), 1,
+  \   'rg --column --line-number --no-heading --color=always --smart-case --hidden --glob "!.git/*" --glob "!node_modules/*" --glob "!bundle*" --fixed-strings '.shellescape(<q-args>), 1,
   \   fzf#vim#with_preview(), <bang>0)
 
 let g:rooter_patterns = ['.git']

@@ -29,6 +29,7 @@ Plug 'tanvirtin/monokai.nvim'
 Plug 'https://github.com/morhetz/gruvbox'
 Plug 'https://github.com/github/copilot.vim'
 Plug 'https://github.com/airblade/vim-rooter'
+Plug 'https://github.com/peitalin/vim-jsx-typescript'
 call plug#end()
 
 
@@ -88,6 +89,7 @@ autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css.scss
 " typescript
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
 autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
 " csv
 autocmd BufNewFile,BufRead *.csv setlocal noexpandtab
 

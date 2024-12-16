@@ -30,6 +30,8 @@ Plug 'https://github.com/morhetz/gruvbox'
 Plug 'https://github.com/github/copilot.vim'
 Plug 'https://github.com/airblade/vim-rooter'
 Plug 'https://github.com/peitalin/vim-jsx-typescript'
+Plug 'https://github.com/preservim/nerdtree'
+Plug 'https://github.com/mg979/vim-visual-multi'
 call plug#end()
 
 
@@ -173,3 +175,15 @@ command! -bang -nargs=* Rg
   \   fzf#vim#with_preview(), <bang>0)
 
 let g:rooter_patterns = ['.git']
+
+" NERDTree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+" Configure Prettier to run on save for .tsx and .jsx files
+augroup PrettierOnSave
+  autocmd!
+  autocmd BufWritePre *.tsx,*.jsx :Prettier
+augroup END

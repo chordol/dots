@@ -24,18 +24,13 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'https://github.com/HerringtonDarkholme/yats.vim'
 Plug 'grvcoelho/vim-javascript-snippets'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'https://github.com/digitaltoad/vim-pug.git'
-Plug 'tanvirtin/monokai.nvim'
 Plug 'https://github.com/morhetz/gruvbox'
 Plug 'https://github.com/github/copilot.vim'
-Plug 'https://github.com/airblade/vim-rooter'
 Plug 'https://github.com/peitalin/vim-jsx-typescript'
 Plug 'https://github.com/preservim/nerdtree'
 Plug 'https://github.com/mg979/vim-visual-multi'
 call plug#end()
 
-
-let g:prettier#config#single_quote = 'true'
 
 
 set foldlevel=20
@@ -57,9 +52,10 @@ set nu
 set ignorecase
 set smartcase
 
+set backupcopy=yes
+
 " https://zerokspot.com/weblog/2016/07/10/editorconfig-in-neovim/
 let g:EditorConfig_exec_path = '/usr/local/bin/editorconfig'
-" let g:EditorConfig_core_mode = 'external_command'
 
 " airline config
 let g:airline#extensions#branch#enabled = 0
@@ -77,11 +73,7 @@ set expandtab
 
 set clipboard=unnamed
 
-" strip trailing whitespace on write
-" autocmd BufWritePre * %s/\s\+$//e
-
 set termguicolors
-" set background=light
 colorscheme gruvbox
 
 " FILETYPE
@@ -94,33 +86,23 @@ autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
 " csv
 autocmd BufNewFile,BufRead *.csv setlocal noexpandtab
-
+" yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
+" markdown
+autocmd FileType markdown setlocal wrap linebreak
 
 " FOLDING
 autocmd Syntax javascript,jsx,vue,typescript,pug setlocal foldmethod=syntax
-" autocmd Syntax js,vue normal zR
 
 " https://superuser.com/questions/1056929/open-file-in-vertical-split-in-vim-netrw/1062063#1062063
 " open file vertically to the right
 let g:netrw_altv=1
 
-" Neat for Javascript
-" Console log from insert mode; Puts focus inside parentheses
-" imap cll console.log();<Esc>==f(a
-" Console log from visual mode on next line, puts visual selection inside parentheses
-" vmap cll yocll<Esc>p
-" Console log from normal mode, inserted on next line with word your on inside parentheses
-" nmap cll yiwocll<Esc>p
-
-" vim-fzf shortcuts
-nnoremap <leader>ff :Files<CR>
-nnoremap <leader>bb :Buffer<CR>
 " save
 noremap <leader>s :update<CR>
 
-
+" COC
 augroup after_plugin_coc_vim
     au!
     " set term title to current file
@@ -141,24 +123,15 @@ augroup END
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
+"End COC
 
+
+" FZF
 set rtp+=/opt/homebrew/opt/fzf
 
-let g:python_host_prog = '/Users/sdzeletovic/.pyenv/shims/python'
-let g:python3_host_prog = '/Users/sdzeletovic/.pyenv/shims/python3'
-
-function! MyFoldText()
-    let nblines = v:foldend - v:foldstart + 1
-    let w = winwidth(0) - &foldcolumn - (&number ? 8 : 0)
-    let line = getline(v:foldstart)
-    let comment = substitute(line, '/\*\|\*/\|{{{\d\=', '', 'g')
-    let expansionString = repeat(".", w - strwidth(nblines.comment.'"'))
-    let txt = comment . expansionString . nblines
-    return txt
-endfunction
-set foldtext=MyFoldText()
-
-set backupcopy=yes
+" vim-fzf shortcuts
+nnoremap <leader>ff :Files<CR>
+nnoremap <leader>bb :Buffer<CR>
 
 " Using ripgrep with FZF
 command! -nargs=* R call FzfRg(<q-args>)
@@ -173,6 +146,7 @@ command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   'rg --column --line-number --no-heading --color=always --smart-case --hidden --glob "!.git/*" --glob "!node_modules/*" --glob "!bundle*" --fixed-strings '.shellescape(<q-args>), 1,
   \   fzf#vim#with_preview(), <bang>0)
+" End FZF
 
 let g:rooter_patterns = ['.git']
 
@@ -182,8 +156,12 @@ nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
-" Configure Prettier to run on save for .tsx and .jsx files
+
+" Prettier
 augroup PrettierOnSave
   autocmd!
   autocmd BufWritePre *.tsx,*.jsx :Prettier
 augroup END
+
+let g:prettier#config#single_quote = 'true'
+" End Prettier

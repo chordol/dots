@@ -90,7 +90,9 @@ autocmd BufNewFile,BufRead *.csv setlocal noexpandtab
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 " markdown
-autocmd FileType markdown setlocal wrap linebreak
+autocmd FileType markdown
+                 \ setlocal wrap linebreak |
+                 \ Copilot disable
 
 " FOLDING
 autocmd Syntax javascript,jsx,vue,typescript,pug setlocal foldmethod=syntax

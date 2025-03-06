@@ -47,8 +47,6 @@ set nowrap
 let mapleader=" "
 set pastetoggle=<f5>
 
-set nu
-
 set ignorecase
 set smartcase
 
@@ -70,11 +68,13 @@ filetype plugin on    " Enable filetype-specific plugins
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set nu
 
 set clipboard=unnamed
 
 set termguicolors
 colorscheme gruvbox
+set background=dark
 
 " FILETYPE
 " vue
@@ -95,6 +95,8 @@ autocmd FileType markdown Copilot disable
 autocmd FileType markdown set spell
 autocmd FileType markdown set spelllang=en,sr
 autocmd FileType markdown let b:coc_suggest_disable = 1
+autocmd FileType markdown setlocal nonumber
+
 
 " FOLDING
 autocmd Syntax javascript,jsx,vue,typescript,pug setlocal foldmethod=syntax

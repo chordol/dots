@@ -96,6 +96,8 @@ autocmd FileType markdown set spell
 autocmd FileType markdown set spelllang=en,sr
 autocmd FileType markdown let b:coc_suggest_disable = 1
 autocmd FileType markdown setlocal nonumber
+autocmd FileType markdown let b:airline_disable_statusline = 1
+
 
 
 " FOLDING

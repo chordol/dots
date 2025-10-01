@@ -45,7 +45,7 @@ set noswapfile
 set nowrap
 
 let mapleader=" "
-set pastetoggle=<f5>
+" set pastetoggle=<f5>  " Removed in newer Neovim versions
 
 set ignorecase
 set smartcase

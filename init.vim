@@ -173,3 +173,10 @@ augroup END
 
 let g:prettier#config#single_quote = 'true'
 " End Prettier
+
+" Dim inactive tmux panes
+augroup TmuxFocusDim
+  autocmd!
+  autocmd FocusLost * highlight Normal guibg=#3a3a3a
+  autocmd FocusGained * highlight Normal guibg=NONE
+augroup END

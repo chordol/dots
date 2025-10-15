@@ -142,18 +142,21 @@ nnoremap <leader>ff :Files<CR>
 nnoremap <leader>bb :Buffer<CR>
 
 " Using ripgrep with FZF
-command! -nargs=* R call FzfRg(<q-args>)
-
 " Ensure FZF uses ripgrep and ignores node_modules
 if executable('rg')
   let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --glob "!.git/*" --glob "!node_modules/*"  --glob "!bundle*"'
 endif
 
-" Use rg in fzf.vim and ignore node_modules
-command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --smart-case --hidden --glob "!.git/*" --glob "!node_modules/*" --glob "!bundle*" --fixed-strings '.shellescape(<q-args>), 1,
-  \   fzf#vim#with_preview(), <bang>0)
+" Interactive ripgrep with live reload - supports multi-word searches
+command! -nargs=* -bang Rg call RipgrepFzf(<q-args>, <bang>0)
+
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case --hidden --glob "!.git/*" --glob "!node_modules/*" --glob "!bundle*" -- %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--disabled', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
 " End FZF
 
 let g:rooter_patterns = ['.git']
